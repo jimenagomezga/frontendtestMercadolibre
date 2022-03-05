@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: #ffe600;
+  border: 0;
+  position: relative;
+  height: 40px;
+}
+
+header img {
+  height: 40px;
+  top: 11px;
+}
+
+header input {
+  width: 800px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 40px;
+  padding-left: 15px;
+  font-size: 17px;
+}
+
+header .contentInput {
+  display: flex;
+}
+
+header button {
+  border: none;
+  height: 40px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+header button img {
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,15 @@
+section .contentResults {
+  background-color: #eeeeee;
+  padding-top: 0px;
+  padding-left: 220px;
+  padding-right: 220px;
+}
+
+section .contentResults p {
+  text-align: left;
+}
+
+.contentnProducts {
+  display: flex;
+  flex-direction: column;
+}
