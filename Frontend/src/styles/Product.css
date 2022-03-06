@@ -1,26 +1,26 @@
 .contentProduct {
   background-color: #ffffff;
-  display: -webkit-flex;
   display: flex;
-  width: 100%;
+  width: 1058px;
   height: 200px;
-  padding: 15px;
-  margin-top: 3px;
+  padding: 16px;
+  margin-bottom: 3px;
+  margin-left: -44px;
 }
 
 .contentPicture {
-  width: 200px;
+  width: 180px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .contentPicture img {
-  height: 100%;
+  height: 180px;
 }
 
 .contentInfoProducto {
   text-align: left;
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .price {
@@ -31,7 +31,7 @@
 
 .title {
   width: 450px;
-  font-size: 18px;
+  font-size: 21px;
   margin-top: -3px;
 }
 
@@ -42,5 +42,9 @@
 .freeShipping img {
   width: 28px;
   height: 28px;
-  margin: 8px;
+  margin-left: 8px;
+}
+
+.condition {
+  color: #00a650;
 }

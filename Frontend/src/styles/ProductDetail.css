@@ -1,0 +1,84 @@
+.contentResultProductDetail {
+  margin-top: -14px;
+}
+
+.categoryContentProduct {
+  text-align: left;
+  margin-left: 175px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.contentProductDetail {
+  background-color: #fff;
+  display: flex;
+  width: 1035px;
+  padding: 32px 28px 16px 28px;
+  margin-left: 172px;
+}
+
+.contentbox1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contentbox1 img {
+  width: 680px;
+}
+
+.contentDesciption {
+  width: 671px;
+  color: #666;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.titleDescrition {
+  font-size: 23px;
+  font-family: Arial;
+  margin-bottom: 16px;
+}
+
+.contentbox2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: 22px;
+}
+
+.infoCondition {
+  font-size: 14px;
+  text-align: left;
+  font-family: Arial;
+  margin-top: 0px;
+  margin-bottom: 14px;
+}
+
+.titleProductDetail {
+  font-size: 29px;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.priceDescription {
+  text-align: left;
+  font-size: 50px;
+  margin-top: 0px;
+  margin-bottom: 46px;
+}
+
+.contentbox2 button {
+  background-color: #3483fa;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  text-align: center;
+}

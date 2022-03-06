@@ -22,8 +22,8 @@ function Product({
         <div className="contentInfoProducto">
           <div className="contentFreeShippingandprice">
             <p className="price">
-              {/* aca va el link del product detail */}$ {price_currency_id}{" "}
-              {new Intl.NumberFormat("de-DE").format(price)}
+              $ {price_currency_id}{" "}
+              {new Intl.NumberFormat("es-AR").format(price)}
               {price_decimals}
             </p>
 
@@ -32,7 +32,7 @@ function Product({
             </p>
           </div>
           <p className="title">{title}</p>
-          <p>{condition}</p>
+          <p className="condition">Producto: {condition}</p>
         </div>
       </div>
     </section>
@@ -40,3 +40,20 @@ function Product({
 }
 
 export default Product;
+
+// {data?.item?.map((data) => {
+//   return (
+//     <ProductDetail
+//     key={data.id}
+//     title={data.title}
+//     price= {data.price.amount}
+//     price_decimals={data.price.decimals}
+//     price_currency={data.price.currency_id}
+//     picture= {data.thumbnail}
+//     condition= {data.condition}
+//     free_shipping= {data.shipping.free_shipping}
+//     sold_quantity= {data.old_quantity}
+//     description= {description.data.plain_text}
+//   />
+//   )
+//   })}

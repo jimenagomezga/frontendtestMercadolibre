@@ -7,9 +7,15 @@ section .contentResults {
 
 section .contentResults p {
   text-align: left;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 .contentnProducts {
   display: flex;
   flex-direction: column;
+}
+
+li {
+  display: inline-block;
 }

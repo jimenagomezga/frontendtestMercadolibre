@@ -2,17 +2,19 @@ import "../../styles/Results.css";
 import Product from "./Product";
 
 function Results({ data }) {
-  // const category = categories?.map((cat) => {
-  //   return <li key={cat.id}>{cat.name}</li>;
-  // });
-
-  // const category = data.categories?.map((category) => category.name);
-  // console.log(category);
+  const category = data.categories?.map((cat) => {
+    return (
+      <li key={cat}>
+        &nbsp;
+        {cat}&nbsp;{">"}
+      </li>
+    );
+  });
 
   return (
     <section>
       <div className="contentResults">
-        <p>categories</p>
+        <p>{category}</p>
         <div className="contentnProducts">
           {data?.items?.map((item) => {
             return (

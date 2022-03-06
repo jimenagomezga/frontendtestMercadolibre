@@ -41,8 +41,11 @@ app.get("/api/items", async (req, res) => {
 
     // Filtrar y dar formato a los elementos encontrados
 
-    let primerItem = response.data.results;
-    let categories = await getCategoryById(primerItem[0].category_id);
+    const catIds = [
+      ...new Set(response.data.results.map((item) => item.category_id)),
+    ];
+
+    let categories = await getCategoryById(catIds[0]);
 
     const items = response.data.results.map((item) => {
       return {
@@ -83,7 +86,7 @@ const getCategoryById = async (id) => {
   return categories;
 };
 
-// Route de /items/:id endpoint
+//Route de /items/:id endpoint
 
 app.get(
   "/api/items/:id",
