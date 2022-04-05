@@ -1,0 +1,10 @@
+.contentloading {
+  background-color: #fff;
+  padding-top: 0.1px;
+  padding-left: 220px;
+  padding-right: 220px;
+}
+
+.contentloading p {
+  font-size: 16px;
+}

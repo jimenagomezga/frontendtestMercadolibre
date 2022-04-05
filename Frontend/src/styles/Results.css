@@ -1,8 +1,13 @@
 section .contentResults {
   background-color: #eeeeee;
-  padding-top: 0px;
+  padding-top: 0.1px;
   padding-left: 220px;
   padding-right: 220px;
+}
+
+section {
+  background-color: #eeeeee;
+  margin-top: -21px;
 }
 
 section .contentResults p {
@@ -18,4 +23,10 @@ section .contentResults p {
 
 li {
   display: inline-block;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+.categoryResults {
+  margin-left: -49px;
 }

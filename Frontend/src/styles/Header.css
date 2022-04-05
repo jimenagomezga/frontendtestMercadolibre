@@ -23,6 +23,7 @@ header input {
   margin-left: 40px;
   padding-left: 15px;
   font-size: 18px;
+  outline: none;
 }
 
 header .contentInput {
@@ -33,7 +34,9 @@ header button {
   border: none;
   height: 40px;
   width: 50px;
-  border-radius: 5px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: -6px;
 }
 
 header button img {

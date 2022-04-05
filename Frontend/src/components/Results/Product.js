@@ -1,10 +1,10 @@
 import React from "react";
-//import { Link } from "react-router-dom";
-//import ProductDetail from "./ProductDetail";
+import { Link } from "react-router-dom";
 import "../../styles/Product.css";
 import iconCard from "../../assets/ic_shipping@2x.png.png.png";
 
 function Product({
+  id,
   title,
   price,
   picture,
@@ -21,12 +21,13 @@ function Product({
         </div>
         <div className="contentInfoProducto">
           <div className="contentFreeShippingandprice">
-            <p className="price">
-              $ {price_currency_id}{" "}
-              {new Intl.NumberFormat("es-AR").format(price)}
-              {price_decimals}
-            </p>
-
+            <Link to={`/items/${id}`}>
+              <p className="price">
+                $ {price_currency_id}{" "}
+                {new Intl.NumberFormat("es-AR").format(price)}
+                {price_decimals}
+              </p>
+            </Link>
             <p className="freeShipping">
               {free_shipping === true ? <img src={iconCard} alt="" /> : null}
             </p>
@@ -40,20 +41,3 @@ function Product({
 }
 
 export default Product;
-
-// {data?.item?.map((data) => {
-//   return (
-//     <ProductDetail
-//     key={data.id}
-//     title={data.title}
-//     price= {data.price.amount}
-//     price_decimals={data.price.decimals}
-//     price_currency={data.price.currency_id}
-//     picture= {data.thumbnail}
-//     condition= {data.condition}
-//     free_shipping= {data.shipping.free_shipping}
-//     sold_quantity= {data.old_quantity}
-//     description= {description.data.plain_text}
-//   />
-//   )
-//   })}

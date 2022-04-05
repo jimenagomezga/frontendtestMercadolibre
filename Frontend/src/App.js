@@ -1,45 +1,67 @@
-import React, { useState, useEffect } from "react";
-//import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import "../src/styles/App.css";
 import Header from "./components/Header/Header";
 import Results from "../src/components/Results/Results";
-import ProductDetail from "../src/components/Results/ProductDetail";
+import ResultsProductDetails from "../src/components/Results/ResultsProductDetails";
 
 function App() {
-  // Arreglo de datos, inicialmente vacio//
   const [data, setData] = useState([]);
-  //valor del boton de busqueda, se actualiza en cada onChange//
   const [search, setSearch] = useState("");
-  //arreglo de items
-  //const [itemid, setItemid] = useState([]);
-  //Description
-  //const [description, setDescription] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [error, setError] = useState(false);
 
-  useEffect(() => {
-    fetch(`http://localhost:7000/api/items?q=${search}`)
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error(error));
-  }, [search]);
+  const setResultsData = (data) => {
+    setData(data);
+  };
 
-  // useEffect(() => {
-  //   fetch(`https://api.mercadolibre.com/items/${itemid}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data))
-  //     .catch((error) => console.log(error));
-  // }, [itemid]);
+  const setSearchResult = (data) => {
+    setSearch(data);
+  };
 
   return (
     <div className="App">
-      <Header setSearch={setSearch} search={search} setData={setData} />
-
-      <Results
-        data={data}
-        setData={setData}
-        //setItemid={setItemid}
-        //setDescription={setDescription}
-      />
-      <ProductDetail />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header
+                  setSearch={setSearchResult}
+                  search={search}
+                  setData={setResultsData}
+                  setLoader={setLoader}
+                  setError={setError}
+                />
+                <Outlet />
+              </>
+            }
+          >
+            <Route path="items" element={<Outlet />}>
+              <Route
+                path=":itemid"
+                element={
+                  <ResultsProductDetails
+                    data={data}
+                    loader={loader}
+                    setLoader={setLoader}
+                  />
+                }
+              />
+              <Route
+                index
+                element={<Results data={data} loader={loader} error={error} />}
+              />
+            </Route>
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

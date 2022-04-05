@@ -39,6 +39,11 @@ app.get("/api/items", async (req, res) => {
       `https://api.mercadolibre.com/sites/MLA/search?q=${search}`
     );
 
+    //Validacion
+    if (response.data.results.length === 0) {
+      return res.status(404).json({ msg: "Sorry, No results found" });
+    }
+
     // Filtrar y dar formato a los elementos encontrados
 
     const catIds = [
@@ -107,6 +112,7 @@ app.get(
       );
 
       const data = response.data;
+      const picture = data.pictures[0];
       const item = {
         id: data.id,
         title: data.title,
@@ -115,10 +121,10 @@ app.get(
           amount: data.price,
           decimals: 0,
         },
-        picture: data.thumbnail,
+        picture: picture.url,
         condition: data.condition,
         free_shipping: data.shipping.free_shipping,
-        sold_quantity: data.old_quantity,
+        sold_quantity: data.sold_quantity,
         description: description.data.plain_text,
       };
 
